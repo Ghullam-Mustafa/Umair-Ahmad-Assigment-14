@@ -1,4 +1,45 @@
+//     //----------------------------------------------------------------------------------- 
+    var users = [];
 
+    function User(firstName,lastName,email,dob) {
+        this.firstName = firstName ;
+        this.lastName = lastName ;
+        this.email = email ;
+        this.dob = dob ;
+    }
+
+
+
+    // ===================field value==========================================
+
+    
+
+
+function  getFieldValue (fielId) {
+       return document.getElementById(fielId).value
+      }  
+
+
+// ================================output clear ======================================
+
+function clearOutput () {
+    output.innerHTML = " ";
+}
+
+// ================================email format ======================================
+var emailFormat = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+// console.log(emailFormat.test(email));
+
+
+// ========get rendom id============================================================
+
+function getRandomId(){
+    return Math.random().toString(36).slice(2)
+}
+
+
+// =================================================================rendom===================
 // let user = {
 //     firstName : "Ghullam",
 //     lastName : "Mustafa",
@@ -64,8 +105,12 @@ function handleSubmit() {
     // let user = new User(firstName, lastName , email , dob)
     user.id = getRandomId();
     user.dateCreated = new Date().getTime();
-    user.push(user)
+    user.status = "active"
+    user.role = "student"
+
+    users.push(user)
     showNotification("A new user been successfully added.", "success")
+    console.log(users);
 }
 // =============================================================================================
 
@@ -149,35 +194,3 @@ function handleSubmit() {
         }
 
 
-//     //----------------------------------------------------------------------------------- 
-    var users = [];
-
-    function User(firstName,lastName,email,dob) {
-        this.firstName = firstName ;
-        this.lastName = lastName ;
-        this.email = email ;
-        this.dob = dob ;
-    }
-
-
-
-    // ===================field value==========================================
-
-    
-
-
-function  getFieldValue (fielId) {
-       return document.getElementById(fielId).value
-      }  
-
-
-// ================================output clear ======================================
-
-function clearOutput () {
-    output.innerHTML = " ";
-}
-
-// ================================email format ======================================
-var emailFormat = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-
-// console.log(emailFormat.test(email));
