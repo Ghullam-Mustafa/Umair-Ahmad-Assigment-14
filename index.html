@@ -37,27 +37,27 @@
 
                 <div class="col-lg-6 col-md-6 col-sm-12   ">
                     <div class="border border-3 m-1 p-3">
-
+                        <form onsubmit="handleSubmit()"></form>
                         <div class="row m-2">
                             <div class="col">
-                                <input type="text" class="form-control" placeholder="First name"
+                                <input type="text" class="form-control" id="firstName" placeholder="First name"
                                     aria-label="First name">
                             </div>
                             <div class="col">
-                                <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+                                <input type="text" class="form-control" id="lastName" placeholder="Last name" aria-label="Last name">
                             </div>
                         </div>
                         <div class="row m-2">
                             <div class="col">
-                                <input type="datetime" class="form-control" placeholder="Email">
+                                <input type="datetime" class="form-control" id="email" placeholder="Email">
                             </div>
                             <div class="col">
-                                <input type="date" class="form-control">
+                                <input type="date" id="dob" class="form-control">
                             </div>
                             <br><br>
                             <div class="row text-center  ">
                                 <div class="col p-3">
-                                    <button type="button" class="btn btn-success px-5">Add User</button>
+                                    <button type="button"  class="btn btn-success px-5">Add User</button>
                                 </div>
                             </div>
                         </div>
