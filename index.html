@@ -27,9 +27,9 @@
                     <div class="border border-3 m-1 p-5">
                         <button type="button" class="btn btn-danger col-lg-12 col-md-12 col-sm-12 m-1 "
                             data-bs-toggle="modal" data-bs-target="#exampleModal">Show images</button>
-                        <button type="button" class="btn btn-danger col-lg-12 col-md-12 col-sm-12 m-1" id="button2">Show
+                        <button type="button" onclick="showTable()" class="btn btn-danger col-lg-12 col-md-12 col-sm-12 m-1" id="button2">Show
                             Table</button>
-                        <button type="button" class="btn btn-danger col-lg-12 col-md-12 col-sm-12 m-1">Print Users in
+                        <button type="button" onclick="butons3()" class="btn btn-danger col-lg-12 col-md-12 col-sm-12 m-1">Print Users in
                             console</button>
                     </div>
                 </div>
@@ -65,13 +65,13 @@
                 </div>
 
                 <br>
-                <h3 class="text-center p-3">Output/Result</h3>
-                <p id="output"></p>
+                <h3 class="text-center p-3" >Output/Result</h3>
+                
                 <div class="container border border-3 p-3">
-
+                    <p id="output"></p>
                 </div>
                 <div class="col p-3">
-                    <button id="clearOutput" class="btn btn-dark px-5">Clear Output</button>
+                    <button id="clearOutput"  class="btn btn-dark px-5">Clear Output</button>
                 </div>
             </div>
         </div>

@@ -18,12 +18,13 @@
 function  getFieldValue (fielId) {
        return document.getElementById(fielId).value
       }  
+// =================================showoutput====================================
 
 
 // ================================output clear ======================================
 
-function clearOutput () {
-    output.innerHTML = " ";
+function clearOutput() {
+    document.getElementById('output').innerHTML = " ";
 }
 
 // ================================email format ======================================
@@ -40,36 +41,52 @@ function getRandomId(){
 
 
 // =================================================================rendom===================
-// let user = {
-//     firstName : "Ghullam",
-//     lastName : "Mustafa",
-//     city : "Faisalabad",
-//     country : "Pakistan",
-//     dateCreated : new Date(),
-//     status : "active",
-//     id : "123456789",
-//     dob : "2000-06-30",
-//     fullName : function () {
-//         return this.firstName + " " + this.lastName;
-//     }
-// }
+let user = {
+    firstName : "Ghullam",
+    lastName : "Mustafa",
+    city : "Faisalabad",
+    country : "Pakistan",
+    dateCreated : new Date(),
+    status : "active",
+    id : "123456789",
+    dob : "2000-06-30",
+    fullName : function () {
+        return this.firstName + " " + this.lastName;
+    }
+}
 
 // console.log(user.fullName);
 
 
 // // ------------------------------------------------------------------------------------------------------------------
 
-// var users = [];
-
-// function User(firstName,lastName,email,dob)
 
 
 
 // // ============================================================table=====================================
 
-// // function showTable() {
+function showTable() {
+    if (!users.length) {
+       showNotification("There is not a single user available.","error") 
+       return;
+    }
+
+    let tableStartingCode = '<div class="table-responsive"><table class="table">';
+    let tableEndingCode = '</table></div>';
+
+    let tableHead = '<thead><tr><th scope = "col">#</th><th scope = "col">First Name</th><th  scope = "col">Last Name</th><th  scope = "col">Email</th></thead>';
+    let tableBody = '';
+
+    for (let i = 0; i < users.length; i++) {
+        tableBody += '<tr><th  scope = "row">'+ (i + 1)+'</th><td>' + users[i].firstName +'</td><td>'+users[i].lastName + '</td><td>' +users[i].email+ '</td></tr>';
+    }
+
+    let table = tableStartingCode + tableHead+"<tbody>" + tableBody + "</tbody>" + tableEndingCode;
+    document.getElementById('output').innerHTML = table;
+    showOutput(table);
+    // console.log(table);
     
-// // }
+}
 // // Clear Output / Result  
 // ===========================================================================================================
 function handleSubmit() {
@@ -110,7 +127,8 @@ function handleSubmit() {
 
     users.push(user)
     showNotification("A new user been successfully added.", "success")
-    console.log(users);
+    // console.log(users);
+    showTable(user)
 }
 // =============================================================================================
 
@@ -123,7 +141,7 @@ function handleSubmit() {
         // toastifySuccess("It's already empty")
     }
     else{
-        // clearOutput();
+        clearOutput();
         showNotification("Output / Result box has been cleared.", "success")
         // toastifySuccess("Output / Result box has been cleared.")
     }
@@ -194,3 +212,27 @@ function handleSubmit() {
         }
 
 
+function HostingPlan(monthly,diskSpace, dataTransfer){
+    this.monthly = monthly;
+    this.diskSpace = diskSpace;
+    this.dataTransfer = dataTransfer
+}
+
+let basicPlan = new HostingPlan(3.99,100+"GB" ,1000)
+
+function showOutput(element) {
+    document.getElementById('output').innerHTML = element
+}
+
+
+
+
+function butons3() {
+    if (!users.length) {
+        showNotification("There is  not a single user available.","error")
+    }
+    for (let i = 0; i < users.length; i++) {
+        console.log(users[i]);
+    }
+    // console.log(users)
+}
